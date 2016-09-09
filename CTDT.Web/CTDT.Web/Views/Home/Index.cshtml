@@ -1,0 +1,26 @@
+﻿
+@* Angular route template*@
+<div ng-view></div>
+@* All scripts is generated here. *@
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <!-- Load angular scripts -->
+    @Scripts.Render("~/bundles/angularjs")
+    <script src="~/App/HomeModule.js"></script>
+
+    <!-- Directive -->
+
+    <!-- Service -->
+    <script src="~/App/services/CommonService.js"></script>
+
+
+    <!-- Controller -->
+    <script src="~/App/controllers/HomeController.js"></script>
+
+    
+
+    <!-- Other scripts -->
+
+
+}
