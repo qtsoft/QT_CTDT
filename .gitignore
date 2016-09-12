@@ -1,0 +1,17 @@
+02.Web_Client/SIGN.WEB/.vs/
+02.Web_Client/SIGN.WEB/packages/
+02.Web_Client/SIGN.WEB/obj/
+02.Web_Client/SIGN.WEB/bin/
+
+
+CTDT_API/.vs/
+CTDT_API/packages/
+
+CTDT_API/HSKR.Identity/bin/
+CTDT_API/HSKR.Identity/obj/
+CTDT_API/HSKR.WebApi/bin/
+CTDT_API/HSKR.WebApi/obj/
+CTDT_API/HSKR.Service/obj/
+CTDT_API/HSKR.Model/bin/
+CTDT_API/HSKR.Model/obj/
+CTDT_API/HSKR.Service/bin/
