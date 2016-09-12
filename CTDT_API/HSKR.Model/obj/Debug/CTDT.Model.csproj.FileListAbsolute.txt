@@ -22,3 +22,15 @@ F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\bin\Debug\Newtonsoft.Json.xm
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.csprojResolveAssemblyReference.cache
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.dll
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.pdb
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\bin\Debug\CTDT.Model.dll.config
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\bin\Debug\CTDT.Model.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\bin\Debug\CTDT.Model.pdb
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\bin\Debug\EntityFramework.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\bin\Debug\Newtonsoft.Json.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\bin\Debug\EntityFramework.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\bin\Debug\Newtonsoft.Json.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\obj\Debug\CTDT.Model.csprojResolveAssemblyReference.cache
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\obj\Debug\CTDT.Model.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Model\obj\Debug\CTDT.Model.pdb

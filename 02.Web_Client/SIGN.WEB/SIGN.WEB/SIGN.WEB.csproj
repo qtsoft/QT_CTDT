@@ -224,8 +224,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\controllers\ChungTu.js" />
-    <Content Include="App\controllers\EdataListController.js" />
     <Content Include="App\controllers\HomeController.js" />
+    <Content Include="App\directives\ngFileSelect.js" />
     <Content Include="App\HomeModule.js" />
     <Content Include="App\services\CommonService.js" />
     <Content Include="App\services\EdataService.js" />
@@ -1038,6 +1038,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\upload_image.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1081,7 +1082,6 @@
     <Content Include="Views\Home\ChungTu.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\directives\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

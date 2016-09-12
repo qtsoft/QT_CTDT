@@ -36,6 +36,9 @@ app.run(['$rootScope', '$window','$location','$route',
             e.preventDefault();
         });
 
+        // API URL
+        $rootScope.apiURL = "http://localhost:58474";
+
         // Base Url of web app.
         $rootScope.BaseUrl = angular.element($('#BaseUrl')).val();
     }]);

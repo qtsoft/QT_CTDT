@@ -24,3 +24,16 @@ F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\EntityFramework.
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.csprojResolveAssemblyReference.cache
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.dll
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.pdb
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\bin\Debug\CTDT.Service.dll.config
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\bin\Debug\CTDT.Service.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\bin\Debug\CTDT.Service.pdb
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\bin\Debug\CTDT.Model.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\bin\Debug\EntityFramework.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\bin\Debug\System.Linq.Dynamic.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\bin\Debug\CTDT.Model.pdb
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\bin\Debug\EntityFramework.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\obj\Debug\CTDT.Service.csprojResolveAssemblyReference.cache
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\obj\Debug\CTDT.Service.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\obj\Debug\CTDT.Service.pdb

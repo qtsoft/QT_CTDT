@@ -27,3 +27,32 @@ D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Identity\bi
 D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Identity\obj\Debug\HSKR.Identity.csprojResolveAssemblyReference.cache
 D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Identity\obj\Debug\HSKR.Identity.dll
 D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Identity\obj\Debug\HSKR.Identity.pdb
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\HSKR.Identity.dll.config
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\HSKR.Identity.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\HSKR.Identity.pdb
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\EntityFramework.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\EntityFramework.SqlServer.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.Owin.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.Owin.Security.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Newtonsoft.Json.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Owin.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\EntityFramework.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\EntityFramework.SqlServer.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.Owin.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.Owin.Security.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\bin\Debug\Newtonsoft.Json.xml
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\obj\Debug\HSKR.Identity.csprojResolveAssemblyReference.cache
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\obj\Debug\HSKR.Identity.dll
+D:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Identity\obj\Debug\HSKR.Identity.pdb

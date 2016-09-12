@@ -1,0 +1,5 @@
+2016-09-13 00:04:22.1881 ERROR System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at CTDT.Service.ChungTuService.GetByFilter(String key, String maChungTu, Int32 maLoaiChungTu, String donViBanHanh, Int32 trangThai, Int32 start, Int32 limit) in d:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.Service\ChungTuService.cs:line 47
+   at CTDT.WebApi.Controllers.ChungTuApiController.GetByFilter(String key, String maChungTu, Int32 maLoaiChungTu, String donViBanHanh, Int32 trangThai, Int32 start, Int32 limit) in d:\workspace_backup\others\QT_CTDT\CTDT_API\HSKR.WebApi\Controllers\ChungTuApiController.cs:line 29 
