@@ -22,3 +22,15 @@ F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\bin\Debug\Newtonsoft.Json.xm
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.csprojResolveAssemblyReference.cache
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.dll
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.pdb
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\bin\Debug\CTDT.Model.dll.config
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\bin\Debug\CTDT.Model.dll
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\bin\Debug\CTDT.Model.pdb
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\bin\Debug\EntityFramework.dll
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\bin\Debug\EntityFramework.xml
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\obj\Debug\CTDT.Model.csprojResolveAssemblyReference.cache
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\obj\Debug\CTDT.Model.dll
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Model\obj\Debug\CTDT.Model.pdb

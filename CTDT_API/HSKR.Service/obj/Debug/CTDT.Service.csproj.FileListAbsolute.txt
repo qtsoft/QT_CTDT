@@ -24,3 +24,16 @@ F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\EntityFramework.
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.csprojResolveAssemblyReference.cache
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.dll
 F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.pdb
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\bin\Debug\CTDT.Service.dll.config
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\bin\Debug\CTDT.Service.dll
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\bin\Debug\CTDT.Service.pdb
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\bin\Debug\CTDT.Model.dll
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\bin\Debug\EntityFramework.dll
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\bin\Debug\System.Linq.Dynamic.dll
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\bin\Debug\CTDT.Model.pdb
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\bin\Debug\EntityFramework.xml
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\obj\Debug\CTDT.Service.csprojResolveAssemblyReference.cache
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\obj\Debug\CTDT.Service.dll
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.Service\obj\Debug\CTDT.Service.pdb

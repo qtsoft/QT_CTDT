@@ -9,6 +9,8 @@ using CTDT.Model.ViewModels;
 using CTDT.Service;
 using CTDT.WebApi.Models;
 using CTDT.WebApi.Utilities;
+using System.Web;
+using System.IO;
 
 namespace CTDT.WebApi.Controllers
 {
@@ -54,6 +56,15 @@ namespace CTDT.WebApi.Controllers
         {
             try
             {
+                string domain;
+                var folderPath = "";
+                var fileName = "";
+                var myuri = new Uri(HttpContext.Current.Request.Url.AbsoluteUri);
+                var pathQuery = myuri.PathAndQuery;
+                domain = myuri.ToString().Replace(pathQuery, "");
+                logger.Trace("domain: ", domain.ToLower());
+                var httpRequest = HttpContext.Current.Request;
+
                 if (!ModelState.IsValid)
                 {
                     var result = new Response<ChungTuModel>
@@ -65,18 +76,61 @@ namespace CTDT.WebApi.Controllers
                     return new ResponseResult(result, ActionContext);
                 }
 
+                var postedFile = httpRequest.Files["file"];
+                if (postedFile != null && postedFile.ContentLength > 0)
+                {
+                    var MaxContentLength = 1024 * 1024 * 10; //Size = 10 MB
+                    IList<string> allowedFileExtensions = new List<string> {".pdf" };
+                    var ext = postedFile.FileName.Substring(postedFile.FileName.LastIndexOf('.'));
+                    var extension = ext.ToLower();
+                    if (!allowedFileExtensions.Contains(extension))
+                    {
+                        logger.Info("Extend  file not .pdf .jpg,.gif,.png");
+                        var dataReturnError = new Response<ChungTuModel>
+                        {
+                            Message = HttpMessage.ERROR_IMG_TYPE,
+                            Status = false
+                        };
+                        ActionContext.Response.StatusCode = HttpStatusCode.Redirect;
+                        return new ResponseResult(dataReturnError, ActionContext);
+                    }
+                    if (postedFile.ContentLength > MaxContentLength)
+                    {
+                        logger.Info("Size file > 10mb");
+                        var dataCheckSize = new Response<ChungTuModel>
+                        {
+                            Message = HttpMessage.ERROR_IMG_SIZE_5,
+                            Status = false
+                        };
+                        ActionContext.Response.StatusCode = HttpStatusCode.LengthRequired;
+                        return new ResponseResult(dataCheckSize, ActionContext);
+                    }
+                    folderPath = @"~/Uploads/" + model.MaChungTu.Trim();
+                    fileName = "CT_" +model.MaChungTu+ extension;
+                    var folderExists = Directory.Exists(HttpContext.Current.Request.MapPath(folderPath));
+                    if (!folderExists)
+                        Directory.CreateDirectory(HttpContext.Current.Request.MapPath(folderPath));
+
+                    var pathUrl = Path.Combine(
+                        HttpContext.Current.Request.MapPath(folderPath),
+                        fileName
+                        );
+                    postedFile.SaveAs(pathUrl);
+                }
+
                 var chungtu = new ChungTu
                 {
                    MaChungTu =  model.MaChungTu, 
                    DonViBanHanh = model.DonViBanHanh, 
                    MaDonVi = model.MaDonVi, 
                    MaVach = "",
-                  NgayBanHanh = model.NgayBanHanh, 
-                  NguoiKy =  model.NguoiKy, 
-                  MaLoaiChungTu = model.MaLoaiChungTu, 
-                  Ten = model.Ten, 
-                  TrangThai = 1
-                   
+                    NgayBanHanh = model.NgayBanHanh, 
+                    NguoiKy =  model.NguoiKy, 
+                    MaLoaiChungTu = model.MaLoaiChungTu, 
+                    Ten = model.Ten, 
+                    TrangThai = 1,
+                    FileDinhKem= folderPath+"/"+fileName
+
                 };
                 _chungtuService.Create(chungtu);
                 var data = new Response<ChungTuModel>

@@ -32,7 +32,7 @@ namespace CTDT.WebApi.Utilities
         public static readonly string NOT_EXIST_EMPLOYEE = "指定された資材の情報が存在していません。もう一回お確かめの上、おやり直しください。もしできない場合は技術者にご報告ください。";
         public static readonly string ERROR_IMG_TYPE = "サポートされているイメージタイプをアップロードください。（.jpg,.gif,.png） ";
         public static readonly string ERROR_IMG_SIZE_3 = "3MB以下のファイルをアップロードください。";
-        public static readonly string ERROR_IMG_SIZE_5 = "5MB以下のファイルをアップロードください。";
+        public static readonly string ERROR_IMG_SIZE_5 = "File > 10Mb ";
         public static readonly string NOT_EXIST_TASK_EMPLOYEE = "タスクIDと社員IDが存在していますせん。もう一回お確かめの上、おやり直しください。もしできない場合は技術者にご報告ください。";
         public static readonly string ERROR_IMG_NULL = "イメージをアップロードください。（.jpg,.gif,.png） のタイプでお願いします。";
         //public static readonly string NOT_EXIST_EMPLOYEE = "指定された作業者（xxx）が存在していません。もう一回お確かめの上、おやり直しください。もしできない場合は技術者にご報告ください。";
