@@ -1,0 +1,24 @@
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\bin\Debug\CTDT.Model.dll.config
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\bin\Debug\CTDT.Model.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\bin\Debug\CTDT.Model.pdb
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\bin\Debug\EntityFramework.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\bin\Debug\EntityFramework.xml
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.csprojResolveAssemblyReference.cache
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.pdb
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\bin\Debug\CTDT.Model.dll.config
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\bin\Debug\CTDT.Model.dll
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\bin\Debug\CTDT.Model.pdb
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\bin\Debug\EntityFramework.dll
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\bin\Debug\Newtonsoft.Json.dll
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\bin\Debug\EntityFramework.xml
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\bin\Debug\Newtonsoft.Json.xml
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.csprojResolveAssemblyReference.cache
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.dll
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Model\obj\Debug\CTDT.Model.pdb

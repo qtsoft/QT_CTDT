@@ -1,0 +1,26 @@
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Debug\CTDT.Service.dll.config
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Debug\CTDT.Service.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Debug\CTDT.Service.pdb
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Debug\CTDT.Model.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Debug\EntityFramework.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Debug\System.Linq.Dynamic.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Debug\CTDT.Model.pdb
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Debug\EntityFramework.xml
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.csprojResolveAssemblyReference.cache
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.pdb
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\CTDT.Service.dll.config
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\CTDT.Service.dll
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\CTDT.Service.pdb
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\CTDT.Model.dll
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\EntityFramework.dll
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\EntityFramework.SqlServer.dll
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\System.Linq.Dynamic.dll
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\CTDT.Model.pdb
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\EntityFramework.xml
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\bin\Debug\EntityFramework.SqlServer.xml
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.csprojResolveAssemblyReference.cache
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.dll
+F:\Trinhnq\Projects\CTDT_New\01.HSKR_API\HSKR.Service\obj\Debug\CTDT.Service.pdb

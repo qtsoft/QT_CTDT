@@ -1,0 +1,10 @@
+2016-06-17 08:52:07.5879 ERROR System.InvalidOperationException: No connection string named 'HSREntities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at HSKR.Service.Master.TaskService.GetMaxPriority(Int32 employeeId) in c:\Users\ha-insight\Documents\HSKR\01.HSKR_API\HSKR.Service\TaskService.cs:line 172
+   at HSKR.WebApi.Controllers.TaskApiController.GetPriorityMax(Int32 employeeId) in c:\Users\ha-insight\Documents\HSKR\01.HSKR_API\HSKR.WebApi\Controllers\TaskApiController.cs:line 520 

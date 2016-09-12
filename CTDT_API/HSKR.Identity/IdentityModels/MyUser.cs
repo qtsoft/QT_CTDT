@@ -1,0 +1,38 @@
+﻿namespace HSKR.Identity
+{
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+
+    public class MyUser : IdentityUser<long, MyLogin, MyUserRole, MyClaim>
+    {
+        #region properties
+
+        //public string ActivationToken { get; set; }
+
+        //public string PasswordAnswer { get; set; }
+
+        //public string PasswordQuestion { get; set; }
+
+        #endregion
+
+        #region methods
+
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(MyUserManager userManager)
+        {
+            var userIdentity = await userManager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            // Add custom user claims here
+            return userIdentity;
+        }
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(MyUserManager manager, string authenticationType)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
+            // Add custom user claims here
+            return userIdentity;
+        }
+        #endregion
+    }
+}

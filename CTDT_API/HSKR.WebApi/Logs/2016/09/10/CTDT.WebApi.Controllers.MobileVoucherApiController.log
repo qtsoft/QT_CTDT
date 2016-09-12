@@ -1,0 +1,2 @@
+2016-09-10 08:55:28.6549 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at CTDT.WebApi.Controllers.MobileVoucherApiController.CheckVoucher(String Code, String IsBarcode) in D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.WebApi\Controllers\MobileVoucherApiController.cs:line 35 

@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CTDTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChungTu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaChungTu" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="MaLoaiChungTu" Type="int" />
+          <Property Name="NgayBanHanh" Type="datetime" />
+          <Property Name="NguoiKy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaDonVi" Type="nvarchar" MaxLength="50" />
+          <Property Name="DonViBanHanh" Type="nvarchar" MaxLength="250" />
+          <Property Name="TrangThai" Type="int" />
+          <Property Name="MaVach" Type="nvarchar" MaxLength="250" />
+          <Property Name="FileDinhKem" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KetQuaKiemTra">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaChungTu" Type="nvarchar" MaxLength="100" />
+          <Property Name="NoiDungKT" Type="nvarchar" MaxLength="250" />
+          <Property Name="NgayKT" Type="datetime" />
+          <Property Name="DiaDiemKT" Type="nvarchar" MaxLength="250" />
+          <Property Name="DonViKT" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="KetQuaKT" Type="bit" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="NguoiKiemTra" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LoaiChungTu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CTDT.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="EMail" />
+            <PropertyRef Name="IsLocked" />
+            <PropertyRef Name="EmailConfirmed" />
+            <PropertyRef Name="PhoneNumberConfirmed" />
+            <PropertyRef Name="TwoFactorEnabled" />
+            <PropertyRef Name="LockoutEnabled" />
+            <PropertyRef Name="AccessFailedCount" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMail" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="ApprovalDate" Type="datetime" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="IsLocked" Type="bit" Nullable="false" />
+          <Property Name="PasswordQuestion" Type="nvarchar(max)" />
+          <Property Name="PasswordAnswer" Type="nvarchar(max)" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime2" Precision="7" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="250" />
+          <Property Name="Division" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CTDT.dbo.UserClaim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CTDT.dbo.UserLogin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserLogin">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CTDT.dbo.UserRegistrationToken' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserRegistrationToken">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Token" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="bigint" />
+          <Property Name="Token" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CTDT.dbo.ViewChungTu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewChungTu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="250" />
+          <Property Name="MaChungTu" Type="nvarchar" MaxLength="100" />
+          <Property Name="MaLoaiChungTu" Type="int" />
+          <Property Name="NgayBanHanh" Type="datetime" />
+          <Property Name="NguoiKy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaDonVi" Type="nvarchar" MaxLength="50" />
+          <Property Name="DonViBanHanh" Type="nvarchar" MaxLength="250" />
+          <Property Name="TrangThai" Type="int" />
+          <Property Name="MaVach" Type="nvarchar" MaxLength="250" />
+          <Property Name="FileDinhKem" Type="nvarchar" MaxLength="250" />
+          <Property Name="TenLoaiChungTu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="CTDTModelStoreContainer">
+          <EntitySet Name="ChungTu" EntityType="Self.ChungTu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KetQuaKiemTra" EntityType="Self.KetQuaKiemTra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiChungTu" EntityType="Self.LoaiChungTu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [User].[Id] AS [Id], 
+    [User].[Login] AS [Login], 
+    [User].[EMail] AS [EMail], 
+    [User].[Password] AS [Password], 
+    [User].[CreationDate] AS [CreationDate], 
+    [User].[ApprovalDate] AS [ApprovalDate], 
+    [User].[LastLoginDate] AS [LastLoginDate], 
+    [User].[IsLocked] AS [IsLocked], 
+    [User].[PasswordQuestion] AS [PasswordQuestion], 
+    [User].[PasswordAnswer] AS [PasswordAnswer], 
+    [User].[EmailConfirmed] AS [EmailConfirmed], 
+    [User].[SecurityStamp] AS [SecurityStamp], 
+    [User].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [User].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [User].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [User].[LockoutEnabled] AS [LockoutEnabled], 
+    [User].[AccessFailedCount] AS [AccessFailedCount], 
+    [User].[UserName] AS [UserName], 
+    [User].[FullName] AS [FullName], 
+    [User].[PhoneNumber] AS [PhoneNumber], 
+    [User].[Position] AS [Position], 
+    [User].[Division] AS [Division]
+    FROM [dbo].[User] AS [User]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserClaim" EntityType="Self.UserClaim" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserClaim].[Id] AS [Id], 
+    [UserClaim].[UserId] AS [UserId], 
+    [UserClaim].[ClaimType] AS [ClaimType], 
+    [UserClaim].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaim] AS [UserClaim]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserLogin" EntityType="Self.UserLogin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserLogin].[UserId] AS [UserId], 
+    [UserLogin].[LoginProvider] AS [LoginProvider], 
+    [UserLogin].[ProviderKey] AS [ProviderKey]
+    FROM [dbo].[UserLogin] AS [UserLogin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserRegistrationToken" EntityType="Self.UserRegistrationToken" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserRegistrationToken].[Id] AS [Id], 
+    [UserRegistrationToken].[UserId] AS [UserId], 
+    [UserRegistrationToken].[Token] AS [Token]
+    FROM [dbo].[UserRegistrationToken] AS [UserRegistrationToken]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewChungTu" EntityType="Self.ViewChungTu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewChungTu].[Id] AS [Id], 
+    [ViewChungTu].[Ten] AS [Ten], 
+    [ViewChungTu].[MaChungTu] AS [MaChungTu], 
+    [ViewChungTu].[MaLoaiChungTu] AS [MaLoaiChungTu], 
+    [ViewChungTu].[NgayBanHanh] AS [NgayBanHanh], 
+    [ViewChungTu].[NguoiKy] AS [NguoiKy], 
+    [ViewChungTu].[MaDonVi] AS [MaDonVi], 
+    [ViewChungTu].[DonViBanHanh] AS [DonViBanHanh], 
+    [ViewChungTu].[TrangThai] AS [TrangThai], 
+    [ViewChungTu].[MaVach] AS [MaVach], 
+    [ViewChungTu].[FileDinhKem] AS [FileDinhKem], 
+    [ViewChungTu].[TenLoaiChungTu] AS [TenLoaiChungTu]
+    FROM [dbo].[ViewChungTu] AS [ViewChungTu]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CTDTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CTDTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChungTus" EntityType="CTDTModel.ChungTu" />
+          <EntitySet Name="KetQuaKiemTras" EntityType="CTDTModel.KetQuaKiemTra" />
+          <EntitySet Name="LoaiChungTus" EntityType="CTDTModel.LoaiChungTu" />
+          <EntitySet Name="Users" EntityType="CTDTModel.User" />
+          <EntitySet Name="UserClaims" EntityType="CTDTModel.UserClaim" />
+          <EntitySet Name="UserLogins" EntityType="CTDTModel.UserLogin" />
+          <EntitySet Name="UserRegistrationTokens" EntityType="CTDTModel.UserRegistrationToken" />
+          <EntitySet Name="ViewChungTus" EntityType="CTDTModel.ViewChungTu" />
+        </EntityContainer>
+        <EntityType Name="ChungTu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaChungTu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MaLoaiChungTu" Type="Int32" />
+          <Property Name="NgayBanHanh" Type="DateTime" Precision="3" />
+          <Property Name="NguoiKy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaDonVi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DonViBanHanh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TrangThai" Type="Int32" />
+          <Property Name="MaVach" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FileDinhKem" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KetQuaKiemTra">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaChungTu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDungKT" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NgayKT" Type="DateTime" Precision="3" />
+          <Property Name="DiaDiemKT" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DonViKT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="KetQuaKT" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="NguoiKiemTra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LoaiChungTu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="EMail" />
+            <PropertyRef Name="IsLocked" />
+            <PropertyRef Name="EmailConfirmed" />
+            <PropertyRef Name="PhoneNumberConfirmed" />
+            <PropertyRef Name="TwoFactorEnabled" />
+            <PropertyRef Name="LockoutEnabled" />
+            <PropertyRef Name="AccessFailedCount" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMail" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovalDate" Type="DateTime" Precision="3" />
+          <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordQuestion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordAnswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="7" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Division" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserLogin">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserRegistrationToken">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Token" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int64" />
+          <Property Name="Token" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewChungTu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MaChungTu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MaLoaiChungTu" Type="Int32" />
+          <Property Name="NgayBanHanh" Type="DateTime" Precision="3" />
+          <Property Name="NguoiKy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaDonVi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DonViBanHanh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TrangThai" Type="Int32" />
+          <Property Name="MaVach" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FileDinhKem" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TenLoaiChungTu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CTDTModelStoreContainer" CdmEntityContainer="CTDTEntities">
+          <EntitySetMapping Name="ChungTus">
+            <EntityTypeMapping TypeName="CTDTModel.ChungTu">
+              <MappingFragment StoreEntitySet="ChungTu">
+                <ScalarProperty Name="FileDinhKem" ColumnName="FileDinhKem" />
+                <ScalarProperty Name="MaVach" ColumnName="MaVach" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="DonViBanHanh" ColumnName="DonViBanHanh" />
+                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
+                <ScalarProperty Name="NguoiKy" ColumnName="NguoiKy" />
+                <ScalarProperty Name="NgayBanHanh" ColumnName="NgayBanHanh" />
+                <ScalarProperty Name="MaLoaiChungTu" ColumnName="MaLoaiChungTu" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="MaChungTu" ColumnName="MaChungTu" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KetQuaKiemTras">
+            <EntityTypeMapping TypeName="CTDTModel.KetQuaKiemTra">
+              <MappingFragment StoreEntitySet="KetQuaKiemTra">
+                <ScalarProperty Name="NguoiKiemTra" ColumnName="NguoiKiemTra" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="KetQuaKT" ColumnName="KetQuaKT" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DonViKT" ColumnName="DonViKT" />
+                <ScalarProperty Name="DiaDiemKT" ColumnName="DiaDiemKT" />
+                <ScalarProperty Name="NgayKT" ColumnName="NgayKT" />
+                <ScalarProperty Name="NoiDungKT" ColumnName="NoiDungKT" />
+                <ScalarProperty Name="MaChungTu" ColumnName="MaChungTu" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiChungTus">
+            <EntityTypeMapping TypeName="CTDTModel.LoaiChungTu">
+              <MappingFragment StoreEntitySet="LoaiChungTu">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CTDTModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="ApprovalDate" ColumnName="ApprovalDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserClaims">
+            <EntityTypeMapping TypeName="CTDTModel.UserClaim">
+              <MappingFragment StoreEntitySet="UserClaim">
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLogins">
+            <EntityTypeMapping TypeName="CTDTModel.UserLogin">
+              <MappingFragment StoreEntitySet="UserLogin">
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRegistrationTokens">
+            <EntityTypeMapping TypeName="CTDTModel.UserRegistrationToken">
+              <MappingFragment StoreEntitySet="UserRegistrationToken">
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewChungTus">
+            <EntityTypeMapping TypeName="CTDTModel.ViewChungTu">
+              <MappingFragment StoreEntitySet="ViewChungTu">
+                <ScalarProperty Name="TenLoaiChungTu" ColumnName="TenLoaiChungTu" />
+                <ScalarProperty Name="FileDinhKem" ColumnName="FileDinhKem" />
+                <ScalarProperty Name="MaVach" ColumnName="MaVach" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="DonViBanHanh" ColumnName="DonViBanHanh" />
+                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
+                <ScalarProperty Name="NguoiKy" ColumnName="NguoiKy" />
+                <ScalarProperty Name="NgayBanHanh" ColumnName="NgayBanHanh" />
+                <ScalarProperty Name="MaLoaiChungTu" ColumnName="MaLoaiChungTu" />
+                <ScalarProperty Name="MaChungTu" ColumnName="MaChungTu" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

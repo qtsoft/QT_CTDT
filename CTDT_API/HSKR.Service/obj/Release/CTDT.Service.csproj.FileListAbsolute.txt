@@ -1,0 +1,13 @@
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Release\CTDT.Service.dll.config
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Release\CTDT.Service.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Release\CTDT.Service.pdb
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Release\CTDT.Model.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Release\EntityFramework.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Release\System.Linq.Dynamic.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Release\CTDT.Model.pdb
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Release\EntityFramework.xml
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\obj\Release\CTDT.Service.csprojResolveAssemblyReference.cache
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\obj\Release\CTDT.Service.dll
+D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.Service\obj\Release\CTDT.Service.pdb

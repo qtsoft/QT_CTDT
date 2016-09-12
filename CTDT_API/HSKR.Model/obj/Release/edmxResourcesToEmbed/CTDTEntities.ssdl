@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CTDTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChungTu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaChungTu" Type="nvarchar" MaxLength="100" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="250" />
+    <Property Name="MaLoaiChungTu" Type="int" />
+    <Property Name="NgayBanHanh" Type="datetime" />
+    <Property Name="NguoiKy" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaDonVi" Type="nvarchar" MaxLength="50" />
+    <Property Name="DonViBanHanh" Type="nvarchar" MaxLength="250" />
+    <Property Name="TrangThai" Type="int" />
+    <Property Name="MaVach" Type="nvarchar" MaxLength="250" />
+    <Property Name="FileDinhKem" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="KetQuaKiemTra">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="MaChungTu" Type="nvarchar" MaxLength="100" />
+    <Property Name="NoiDungKT" Type="nvarchar" MaxLength="250" />
+    <Property Name="NgayKT" Type="datetime" />
+    <Property Name="DiaDiemKT" Type="nvarchar" MaxLength="250" />
+    <Property Name="DonViKT" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="KetQuaKT" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="NguoiKiemTra" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LoaiChungTu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CTDT.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Login" />
+      <PropertyRef Name="EMail" />
+      <PropertyRef Name="IsLocked" />
+      <PropertyRef Name="EmailConfirmed" />
+      <PropertyRef Name="PhoneNumberConfirmed" />
+      <PropertyRef Name="TwoFactorEnabled" />
+      <PropertyRef Name="LockoutEnabled" />
+      <PropertyRef Name="AccessFailedCount" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="ApprovalDate" Type="datetime" />
+    <Property Name="LastLoginDate" Type="datetime" />
+    <Property Name="IsLocked" Type="bit" Nullable="false" />
+    <Property Name="PasswordQuestion" Type="nvarchar(max)" />
+    <Property Name="PasswordAnswer" Type="nvarchar(max)" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime2" Precision="7" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Position" Type="nvarchar" MaxLength="250" />
+    <Property Name="Division" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CTDT.dbo.UserClaim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CTDT.dbo.UserLogin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+    </Key>
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CTDT.dbo.UserRegistrationToken' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserRegistrationToken">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Token" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="Token" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CTDTModelStoreContainer">
+    <EntitySet Name="ChungTu" EntityType="Self.ChungTu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KetQuaKiemTra" EntityType="Self.KetQuaKiemTra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiChungTu" EntityType="Self.LoaiChungTu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [User].[Id] AS [Id], 
+    [User].[Login] AS [Login], 
+    [User].[EMail] AS [EMail], 
+    [User].[Password] AS [Password], 
+    [User].[CreationDate] AS [CreationDate], 
+    [User].[ApprovalDate] AS [ApprovalDate], 
+    [User].[LastLoginDate] AS [LastLoginDate], 
+    [User].[IsLocked] AS [IsLocked], 
+    [User].[PasswordQuestion] AS [PasswordQuestion], 
+    [User].[PasswordAnswer] AS [PasswordAnswer], 
+    [User].[EmailConfirmed] AS [EmailConfirmed], 
+    [User].[SecurityStamp] AS [SecurityStamp], 
+    [User].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [User].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [User].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [User].[LockoutEnabled] AS [LockoutEnabled], 
+    [User].[AccessFailedCount] AS [AccessFailedCount], 
+    [User].[UserName] AS [UserName], 
+    [User].[FullName] AS [FullName], 
+    [User].[PhoneNumber] AS [PhoneNumber], 
+    [User].[Position] AS [Position], 
+    [User].[Division] AS [Division]
+    FROM [dbo].[User] AS [User]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserClaim" EntityType="Self.UserClaim" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserClaim].[Id] AS [Id], 
+    [UserClaim].[UserId] AS [UserId], 
+    [UserClaim].[ClaimType] AS [ClaimType], 
+    [UserClaim].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaim] AS [UserClaim]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserLogin" EntityType="Self.UserLogin" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserLogin].[UserId] AS [UserId], 
+    [UserLogin].[LoginProvider] AS [LoginProvider], 
+    [UserLogin].[ProviderKey] AS [ProviderKey]
+    FROM [dbo].[UserLogin] AS [UserLogin]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserRegistrationToken" EntityType="Self.UserRegistrationToken" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserRegistrationToken].[Id] AS [Id], 
+    [UserRegistrationToken].[UserId] AS [UserId], 
+    [UserRegistrationToken].[Token] AS [Token]
+    FROM [dbo].[UserRegistrationToken] AS [UserRegistrationToken]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

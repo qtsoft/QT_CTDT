@@ -1,0 +1,24 @@
+2016-09-10 07:54:08.5647 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at CTDT.WebApi.Controllers.UserApiController.ChangePass(ChangePasswordBindingModel model) in D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.WebApi\Controllers\UserApiController.cs:line 134 
+2016-09-10 07:54:43.0823 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at CTDT.WebApi.Controllers.UserApiController.ChangePass(ChangePasswordBindingModel model) in D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.WebApi\Controllers\UserApiController.cs:line 134 
+2016-09-10 09:23:14.7829 ERROR System.ArgumentNullException: Value cannot be null.
+Parameter name: manager
+   at Microsoft.AspNet.Identity.UserManagerExtensions.Find[TUser,TKey](UserManager`2 manager, String userName, String password)
+   at CTDT.WebApi.Controllers.UserApiController.SignIn(UserModel userModel) in D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.WebApi\Controllers\UserApiController.cs:line 47 
+2016-09-10 09:28:09.5899 ERROR System.ArgumentNullException: Value cannot be null.
+Parameter name: manager
+   at Microsoft.AspNet.Identity.UserManagerExtensions.Find[TUser,TKey](UserManager`2 manager, String userName, String password)
+   at CTDT.WebApi.Controllers.UserApiController.SignIn(UserModel userModel) in D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.WebApi\Controllers\UserApiController.cs:line 47 
+2016-09-10 09:28:59.7485 ERROR System.ArgumentNullException: Value cannot be null.
+Parameter name: manager
+   at Microsoft.AspNet.Identity.UserManagerExtensions.Find[TUser,TKey](UserManager`2 manager, String userName, String password)
+   at CTDT.WebApi.Controllers.UserApiController.SignIn(UserModel userModel) in D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.WebApi\Controllers\UserApiController.cs:line 47 
+2016-09-10 10:30:48.3171 ERROR System.ArgumentNullException: Value cannot be null.
+Parameter name: manager
+   at Microsoft.AspNet.Identity.UserManagerExtensions.Find[TUser,TKey](UserManager`2 manager, String userName, String password)
+   at CTDT.WebApi.Controllers.UserApiController.SignIn(UserModel userModel) in D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.WebApi\Controllers\UserApiController.cs:line 47 
+2016-09-10 14:57:38.5237 ERROR System.ArgumentNullException: Value cannot be null.
+Parameter name: manager
+   at Microsoft.AspNet.Identity.UserManagerExtensions.Find[TUser,TKey](UserManager`2 manager, String userName, String password)
+   at CTDT.WebApi.Controllers.UserApiController.SignIn(UserModel userModel) in D:\Projects\2016\NAMTT-VTSoft\New folder\CTDT-Pilot\01.HSKR_API\HSKR.WebApi\Controllers\UserApiController.cs:line 47 
