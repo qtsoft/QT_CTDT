@@ -1,0 +1,44 @@
+.main{
+  background-color:#a3c0ac;
+}
+
+.form_information{
+  background-color:#ffffff;
+  margin: 20px;
+  border:1px solid black;
+  padding-bottom: 20px;
+}
+
+.form_information h5{
+  font-weight:bold;
+}
+
+.table_list{
+  background-color:#ffffff;
+  margin: 20px;
+}
+
+.btn_center{
+  text-align: center;
+}
+
+.pagination-pager{
+  margin:0px;
+}
+
+.modal_dialog_content{
+  background-color:#ffffff;
+  width:85%;
+}
+
+.pd_0{
+  padding:0px;
+}
+
+.pd_5{
+  padding-right:5px;
+}
+
+.first_table{
+  background-color:red;
+}

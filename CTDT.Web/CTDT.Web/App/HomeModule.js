@@ -13,14 +13,8 @@ app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.when("/",
         {
             caseInsensitiveMatch: true,
-            templateUrl: "/Client/Home",
-            controller: "HomeController"
-        });
-    $routeProvider.when("/notfound",
-        {
-            caseInsensitiveMatch: true,
-            title: 'Not found',
-            templateUrl: "/Client/NotFound"
+            templateUrl: "/Home/EdataList",
+            controller: "EdataListController"
         });
     $routeProvider.otherwise({
         redirectTo: "/"
@@ -32,6 +26,9 @@ app.run(['$rootScope', '$window','$location','$route',
         $rootScope.$on('$routeChangeError', function (e, curr, prev) {
             e.preventDefault();
         });
+
+        // API URL
+        $rootScope.apiURL = "xxx";
 
         // Base Url of web app.
         $rootScope.BaseUrl = angular.element($('#BaseUrl')).val();

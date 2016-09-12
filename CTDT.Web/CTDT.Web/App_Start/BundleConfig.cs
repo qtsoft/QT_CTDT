@@ -32,6 +32,7 @@ namespace CTDT.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/style.css",
                       "~/Content/site.css"));
         }
     }

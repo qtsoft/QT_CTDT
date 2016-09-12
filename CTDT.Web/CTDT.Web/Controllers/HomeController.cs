@@ -8,23 +8,15 @@ namespace CTDT.Web.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("")]
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult EdataList()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return PartialView("~/Views/Home/_EdataList.cshtml");
         }
     }
 }
