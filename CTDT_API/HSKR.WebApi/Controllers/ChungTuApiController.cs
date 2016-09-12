@@ -133,6 +133,7 @@ namespace CTDT.WebApi.Controllers
 
                 };
                 _chungtuService.Create(chungtu);
+                model.FileDinhKem = folderPath.Replace("~", "") + "/" + fileName;
                 var data = new Response<ChungTuModel>
                 {
                     Message = "Create Success",

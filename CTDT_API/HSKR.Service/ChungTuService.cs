@@ -20,6 +20,7 @@ namespace CTDT.Service
         {
             _context = context;
             _dbChungTu = _context.Set<ChungTu>();
+            _viewChungTus = _context.Set<ViewChungTu>();
         }
 
         public List<ViewChungTuModel> GetByFilter(string key = "", string maChungTu="", int maLoaiChungTu=0, string donViBanHanh="", int trangThai=0, int start = 1, int limit = 10)
