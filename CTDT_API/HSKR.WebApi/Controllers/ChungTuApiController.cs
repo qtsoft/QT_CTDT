@@ -161,6 +161,15 @@ namespace CTDT.WebApi.Controllers
         {
             try
             {
+                string domain;
+                var folderPath = "";
+                var fileName = "";
+                var myuri = new Uri(HttpContext.Current.Request.Url.AbsoluteUri);
+                var pathQuery = myuri.PathAndQuery;
+                domain = myuri.ToString().Replace(pathQuery, "");
+                logger.Trace("domain: ", domain.ToLower());
+                var httpRequest = HttpContext.Current.Request;
+
                 if (!ModelState.IsValid)
                 {
                     var result = new Response<LoaiChungTuModel>
@@ -171,6 +180,7 @@ namespace CTDT.WebApi.Controllers
                     ActionContext.Response.StatusCode = HttpStatusCode.BadRequest;
                     return new ResponseResult(result, ActionContext);
                 }
+
                 var ct = _chungtuService.GetEntityById(model.Id);
                 // check exist
                 if (ct == null)
@@ -183,6 +193,50 @@ namespace CTDT.WebApi.Controllers
                     ActionContext.Response.StatusCode = HttpStatusCode.NotFound;
                     return new ResponseResult(result, ActionContext);
                 }
+
+                var postedFile = httpRequest.Files["file"];
+                if (postedFile != null && postedFile.ContentLength > 0)
+                {
+                    var MaxContentLength = 1024 * 1024 * 10; //Size = 10 MB
+                    IList<string> allowedFileExtensions = new List<string> { ".pdf" };
+                    var ext = postedFile.FileName.Substring(postedFile.FileName.LastIndexOf('.'));
+                    var extension = ext.ToLower();
+                    if (!allowedFileExtensions.Contains(extension))
+                    {
+                        logger.Info("Extend  file not .pdf .jpg,.gif,.png");
+                        var dataReturnError = new Response<ChungTuModel>
+                        {
+                            Message = HttpMessage.ERROR_IMG_TYPE,
+                            Status = false
+                        };
+                        ActionContext.Response.StatusCode = HttpStatusCode.Redirect;
+                        return new ResponseResult(dataReturnError, ActionContext);
+                    }
+                    if (postedFile.ContentLength > MaxContentLength)
+                    {
+                        logger.Info("Size file > 10mb");
+                        var dataCheckSize = new Response<ChungTuModel>
+                        {
+                            Message = HttpMessage.ERROR_IMG_SIZE_5,
+                            Status = false
+                        };
+                        ActionContext.Response.StatusCode = HttpStatusCode.LengthRequired;
+                        return new ResponseResult(dataCheckSize, ActionContext);
+                    }
+                    folderPath = @"~/Uploads/" + model.MaChungTu.Trim();
+                    fileName = "CT_" + model.MaChungTu + extension;
+                    var folderExists = Directory.Exists(HttpContext.Current.Request.MapPath(folderPath));
+                    if (!folderExists)
+                        Directory.CreateDirectory(HttpContext.Current.Request.MapPath(folderPath));
+
+                    var pathUrl = Path.Combine(
+                        HttpContext.Current.Request.MapPath(folderPath),
+                        fileName
+                        );
+                    postedFile.SaveAs(pathUrl);
+                }
+
+
                 ct.MaChungTu = model.MaChungTu;
 
                 ct.MaDonVi = model.MaDonVi;
@@ -193,6 +247,117 @@ namespace CTDT.WebApi.Controllers
                 ct.Ten = model.Ten;
                 ct.TrangThai = model.TrangThai;
                 ct.DonViBanHanh = model.DonViBanHanh;
+                if (!string.IsNullOrEmpty(fileName))
+                {
+
+                    ct.FileDinhKem = folderPath.Replace("~", "") + "/" + fileName;
+                    logger.Trace("Trace UrlSource: " + ct.FileDinhKem);
+                }
+                _chungtuService.Update(ct);
+                var data = new Response<ChungTuModel>
+                {
+                    Message = "Edit Success",
+                    Status = true,
+                    Data = model
+                };
+
+                return new ResponseResult(data, ActionContext);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                var data = new Response<ChungTuModel>
+                {
+                    Message = HttpMessage.ERROR_EDIT,
+                    Status = false
+                };
+                ActionContext.Response.StatusCode = HttpStatusCode.InternalServerError;
+                return new ResponseResult(data, ActionContext);
+            }
+        }
+
+
+        [HttpPost]
+        public ResponseResult UpdateTrangThai(ChungTuModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    var result = new Response<LoaiChungTuModel>
+                    {
+                        Message = HttpMessage.INVALID_MODEL,
+                        Status = false,
+                    };
+                    ActionContext.Response.StatusCode = HttpStatusCode.BadRequest;
+                    return new ResponseResult(result, ActionContext);
+                }
+
+                var ct = _chungtuService.GetEntityById(model.Id);
+                // check exist
+                if (ct == null)
+                {
+                    var result = new Response<ChungTuModel>
+                    {
+                        Message = HttpMessage.DATA_NOT_FOUND,
+                        Status = false,
+                    };
+                    ActionContext.Response.StatusCode = HttpStatusCode.NotFound;
+                    return new ResponseResult(result, ActionContext);
+                }
+                ct.TrangThai = model.TrangThai;
+                _chungtuService.Update(ct);
+                var data = new Response<ChungTuModel>
+                {
+                    Message = "Edit Success",
+                    Status = true,
+                    Data = model
+                };
+
+                return new ResponseResult(data, ActionContext);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                var data = new Response<ChungTuModel>
+                {
+                    Message = HttpMessage.ERROR_EDIT,
+                    Status = false
+                };
+                ActionContext.Response.StatusCode = HttpStatusCode.InternalServerError;
+                return new ResponseResult(data, ActionContext);
+            }
+        }
+
+        [HttpPost]
+        public ResponseResult Signature(ChungTuModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    var result = new Response<LoaiChungTuModel>
+                    {
+                        Message = HttpMessage.INVALID_MODEL,
+                        Status = false,
+                    };
+                    ActionContext.Response.StatusCode = HttpStatusCode.BadRequest;
+                    return new ResponseResult(result, ActionContext);
+                }
+
+                var ct = _chungtuService.GetEntityById(model.Id);
+                // check exist
+                if (ct == null)
+                {
+                    var result = new Response<ChungTuModel>
+                    {
+                        Message = HttpMessage.DATA_NOT_FOUND,
+                        Status = false,
+                    };
+                    ActionContext.Response.StatusCode = HttpStatusCode.NotFound;
+                    return new ResponseResult(result, ActionContext);
+                }
+                ct.TrangThai = model.TrangThai;
                 _chungtuService.Update(ct);
                 var data = new Response<ChungTuModel>
                 {

@@ -26,11 +26,7 @@ namespace CTDT.Service
         public List<ViewChungTuModel> GetByFilter(string key = "", string maChungTu="", int maLoaiChungTu=0, string donViBanHanh="", int trangThai=0, int start = 1, int limit = 10)
         {
 
-            /*var myuri = new Uri(HttpContext.Current.Request.Url.AbsoluteUri);
-            var pathQuery = myuri.PathAndQuery;
-            var appUrl = HttpRuntime.AppDomainAppVirtualPath;
-
-            var domain = myuri.ToString().Replace(pathQuery, "") + appUrl.Trim();*/
+         
             Expression<Func<ViewChungTuModel, bool>> lambda;
             if (maLoaiChungTu > 0)
             {
