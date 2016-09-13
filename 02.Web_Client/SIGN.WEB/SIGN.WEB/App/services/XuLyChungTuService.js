@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-service.service("EdataService", function ($http, $rootScope, $window, $location) {
+service.service("XuLyChungTuService", function ($http, $rootScope, $window, $location) {
 
     // Function to search docs
     this.searchDocs = function (data, start, limit) {

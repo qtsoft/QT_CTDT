@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-app.controller('ChungTuController', function ($scope, $rootScope, $sce, $window, EdataService, fileReader) {
+app.controller('TraCuuKetQuaController', function ($scope, $rootScope, $sce, $windo0w, XuLyChungTuService, fileReader) {
     // Initial object
     $scope.doc = {};
     $scope.newDoc = {};
@@ -9,7 +9,7 @@ app.controller('ChungTuController', function ($scope, $rootScope, $sce, $window,
     // Search documents
     $scope.searchDoc = function () {
         // start and limit fixed: 1 - 1000
-        
+
         var promisePost = EdataService.searchDocs($scope.doc, 1, 1000);
         promisePost.then(
             function (result) {
@@ -30,14 +30,14 @@ app.controller('ChungTuController', function ($scope, $rootScope, $sce, $window,
                       });
     };
 
-    // Create new doc
-    $scope.addNewDoc = function() {
-        var promisePost = EdataService.addNewDoc($scope.newDoc, $scope.file);
-        promisePost.then(
-            function (result) {
-                
-            }, function (error) {
-                console.log(error);
-            });
-    }
+    //// Create new doc
+    //$scope.addNewDoc = function () {
+    //    var promisePost = EdataService.addNewDoc($scope.newDoc, $scope.file);
+    //    promisePost.then(
+    //        function (result) {
+
+    //        }, function (error) {
+    //            console.log(error);
+    //        });
+    //}
 });

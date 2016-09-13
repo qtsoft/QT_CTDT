@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-service.service("EdataService", function ($http, $rootScope, $window, $location) {
+service.service("TraCuuKetQuaService", function ($http, $rootScope, $window, $location) {
 
     // Function to search docs
     this.searchDocs = function (data, start, limit) {
@@ -19,19 +19,5 @@ service.service("EdataService", function ($http, $rootScope, $window, $location)
         });
         return request;
     }
-
-    this.addNewDoc = function (data, file) {
-        var fdata = new FormData();
-        var url = $rootScope.apiURL + '/api/ChungTuApi/Create';
-
-        fdata.append('file', file);
-        fdata.append('data', JSON.stringify(data));
-
-        return $http.post(url, fdata, {
-            transformRequest: angular.identity,
-            headers: { 'Content-Type': undefined }
-        });
-    }
-
 
 });
