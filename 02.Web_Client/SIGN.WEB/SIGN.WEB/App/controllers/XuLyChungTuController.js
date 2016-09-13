@@ -3,6 +3,7 @@
 app.controller('XuLyChungTuController', function ($scope, $rootScope, $sce, $window, XuLyChungTuService, EdataService) {
     // Initial object
     $scope.doc = {};
+    $scope.detailDoc = {};
     $scope.chungtuList = [];
 
     // Search documents
@@ -18,4 +19,10 @@ app.controller('XuLyChungTuController', function ($scope, $rootScope, $sce, $win
             });
     }
     $scope.searchDoc();
+
+    // Show modal detail data
+    $scope.showDetailData = function(data) {
+        $scope.detailDoc = data;
+        $('#myModal').modal('toggle');
+    }
 });
