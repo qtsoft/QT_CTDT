@@ -259,3 +259,4 @@ C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.WebApi\bin\System.Web.Http.Ow
 C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.WebApi\obj\Debug\CTDT.WebApi.csprojResolveAssemblyReference.cache
 C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.WebApi\obj\Debug\CTDT.WebApi.dll
 C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.WebApi\obj\Debug\CTDT.WebApi.pdb
+C:\Users\QUOCTRINH\Desktop\Git_Namtt\CTDT_API\HSKR.WebApi\bin\Bytescout.BarCode.dll

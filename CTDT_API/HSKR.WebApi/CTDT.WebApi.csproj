@@ -47,6 +47,9 @@
       <HintPath>..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Bytescout.BarCode">
+      <HintPath>..\..\..\HSKR\01.HSKR_API\Lib\Bytescout.BarCode.dll</HintPath>
+    </Reference>
     <Reference Include="Heroic.AutoMapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Heroic.AutoMapper.2.0.0\lib\net45\Heroic.AutoMapper.dll</HintPath>
       <Private>True</Private>
