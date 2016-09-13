@@ -68,7 +68,7 @@ namespace CTDT.WebApi.Controllers
                 logger.Trace("domain: ", domain.ToLower());
                
                 var httpRequest = HttpContext.Current.Request;
-                var strJson = httpRequest.Form["path"].Trim();
+                var strJson = httpRequest.Form["data"].Trim();
                 var model = JsonConvert.DeserializeObject<ChungTuModel>(strJson);
 
                 if (!ModelState.IsValid)
@@ -176,7 +176,7 @@ namespace CTDT.WebApi.Controllers
                 logger.Trace("domain: ", domain.ToLower());
                 
                 var httpRequest = HttpContext.Current.Request;
-                var strJson = httpRequest.Form["path"].Trim();
+                var strJson = httpRequest.Form["data"].Trim();
                 var model = JsonConvert.DeserializeObject<ChungTuModel>(strJson);
                 if (!ModelState.IsValid)
                 {
