@@ -15,7 +15,7 @@ namespace CTDT.Model.ViewModels
         public string DonViBanHanh { get; set; }
         public DateTime? NgayPheDuyet { get; set; }
         public string TrangThai { get; set; }
-        public List<HoSoChungTu> Files { get; set; }
+        public string Files { get; set; }
     }
 
     public class HoSoChungTu

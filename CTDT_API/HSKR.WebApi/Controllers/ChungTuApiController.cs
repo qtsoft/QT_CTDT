@@ -11,6 +11,8 @@ using CTDT.WebApi.Models;
 using CTDT.WebApi.Utilities;
 using System.Web;
 using System.IO;
+using Bytescout.BarCode;
+using Newtonsoft.Json;
 
 namespace CTDT.WebApi.Controllers
 {
@@ -52,7 +54,7 @@ namespace CTDT.WebApi.Controllers
         }
 
         [HttpPost]
-        public ResponseResult Create(ChungTuModel model)
+        public ResponseResult Create()
         {
             try
             {
@@ -61,9 +63,13 @@ namespace CTDT.WebApi.Controllers
                 var fileName = "";
                 var myuri = new Uri(HttpContext.Current.Request.Url.AbsoluteUri);
                 var pathQuery = myuri.PathAndQuery;
-                domain = myuri.ToString().Replace(pathQuery, "");
+                var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+                domain = myuri.ToString().Replace(pathQuery, "")+ appUrl.Trim();
                 logger.Trace("domain: ", domain.ToLower());
+               
                 var httpRequest = HttpContext.Current.Request;
+                var strJson = httpRequest.Form["path"].Trim();
+                var model = JsonConvert.DeserializeObject<ChungTuModel>(strJson);
 
                 if (!ModelState.IsValid)
                 {
@@ -157,7 +163,7 @@ namespace CTDT.WebApi.Controllers
         }
 
         [HttpPost]
-        public ResponseResult Edit(ChungTuModel model)
+        public ResponseResult Edit()
         {
             try
             {
@@ -168,11 +174,13 @@ namespace CTDT.WebApi.Controllers
                 var pathQuery = myuri.PathAndQuery;
                 domain = myuri.ToString().Replace(pathQuery, "");
                 logger.Trace("domain: ", domain.ToLower());
+                
                 var httpRequest = HttpContext.Current.Request;
-
+                var strJson = httpRequest.Form["path"].Trim();
+                var model = JsonConvert.DeserializeObject<ChungTuModel>(strJson);
                 if (!ModelState.IsValid)
                 {
-                    var result = new Response<LoaiChungTuModel>
+                    var result = new Response<ChungTuModel>
                     {
                         Message = HttpMessage.INVALID_MODEL,
                         Status = false,
@@ -334,6 +342,10 @@ namespace CTDT.WebApi.Controllers
         {
             try
             {
+                string domain;
+                var folderPath = "";
+                var fileName = "";
+                string currentDir = Directory.GetCurrentDirectory();
                 if (!ModelState.IsValid)
                 {
                     var result = new Response<LoaiChungTuModel>
@@ -357,6 +369,20 @@ namespace CTDT.WebApi.Controllers
                     ActionContext.Response.StatusCode = HttpStatusCode.NotFound;
                     return new ResponseResult(result, ActionContext);
                 }
+                // Create new barcode and register it.
+                Bytescout.BarCode.Barcode barcode = new Bytescout.BarCode.Barcode();
+                barcode.RegistrationName = "demo";
+                barcode.RegistrationKey = "demo";
+                
+                // Set symbology
+                barcode.Symbology = SymbologyType.Code93;
+                // Set value
+                barcode.Value = model.Id.ToString();
+                // Place barcode at bottom-right corner of every document page
+                folderPath = @"/Uploads/" + model.MaChungTu.Trim();
+                fileName = "CT_" + model.Id + ".pdf";
+
+                barcode.DrawToPDF(currentDir+ ct.FileDinhKem, -1, 150, 130, currentDir + folderPath+fileName);
                 ct.TrangThai = model.TrangThai;
                 _chungtuService.Update(ct);
                 var data = new Response<ChungTuModel>

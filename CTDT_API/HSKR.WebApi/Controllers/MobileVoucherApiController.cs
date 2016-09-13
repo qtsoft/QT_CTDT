@@ -29,6 +29,16 @@ namespace CTDT.WebApi.Controllers
         {
             try
             {
+                string domain;
+                var folderPath = "";
+                var fileName = "";
+                var myuri = new Uri(HttpContext.Current.Request.Url.AbsoluteUri);
+                var pathQuery = myuri.PathAndQuery;
+                var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+                domain = myuri.ToString().Replace(pathQuery, "") + appUrl.Trim();
+                logger.Trace("domain: ", domain.ToLower());
+
+
                 if (IsBarcode.Equals("1"))
                 {
                     var chungTu = _chungtuService.Find(c => (c.MaVach.ToUpper().Trim() == Code.ToUpper().Trim() && c.TrangThai == 4)).FirstOrDefault();
@@ -57,9 +67,8 @@ namespace CTDT.WebApi.Controllers
                             LoaiChungTu = chungTu.MaLoaiChungTu.ToString(),
                             MaChungTu = chungTu.MaChungTu,
                             NgayPheDuyet = chungTu.NgayBanHanh,
-                            TrangThai = trangThaiChungTu
-
-
+                            TrangThai = trangThaiChungTu,
+                            Files = domain + chungTu.FileDinhKem
                         }
                     };
                     return new ResponseResult(data, ActionContext);
