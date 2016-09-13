@@ -14,10 +14,10 @@
                                     <label class="control-label col-sm-3" for="loai_chung_tu">Loại chứng từ</label>
                                     <div class="col-sm-8">
                                         <select class="form-control" id="sel1" ng-model="doc.type">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
+                                            <option value="1">Phiếu xuất</option>
+                                            <option value="2">Phiếu nhập</option>
+                                            @*<option value="3">3</option>
+                                            <option value="4">4</option>*@
                                         </select>
                                     </div>
                                 </div>
@@ -33,7 +33,7 @@
                                     <label class="control-label col-sm-3" for="loai_chung_tu">Trạng thái</label>
                                     <div class="col-sm-8">
                                         <select class="form-control" id="status" ng-model="doc.Status">
-                                            <option value="1">1</option>
+                                            <option value="1" selected="selected">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
@@ -54,9 +54,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-3" for="ma_chung_tu">Mã chứng từ</label>
+                                    <label class="control-label col-sm-3" for="ma_chung_tu">Tên Chứng từ</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="ma_chung_tu" ng-model="doc.Id">
+                                        <input type="text" class="form-control" id="ma_chung_tu" ng-model="doc.Name">
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 btn_center">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">THÊM MỚI</button>
+                        
                         <div id="myModal" class="modal fade" role="dialog">
                             <div class="modal-dialog modal-lg modal_dialog_content ">
                                 <!-- Modal content-->
@@ -79,11 +79,11 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-sm-3" for="loai_chung_tu">Loại chứng từ</label>
                                                             <div class="col-sm-8">
-                                                                <select class="form-control" id="sel1">
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
-                                                                    <option>4</option>
+                                                                <select class="form-control" id="sel1" ng-mode="newDoc.MaLoaiChungTu">
+                                                                    <option value="1" selected="selected">Phiếu xuất kho</option>
+                                                                    <option value="2">Phiếu nhập kho</option>
+                                                                    @*<option value="3">3</option>
+                                                                    <option value="4">4</option>*@
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -91,20 +91,21 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-sm-3" for="ma_chung_tu">Mã chứng từ</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" id="ma_chung_tu">
+                                                                <input type="text" class="form-control" id="ma_chung_tu" ng-model="newDoc.MaChungTu">
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label class="control-label col-sm-3" for="ma_chung_tu">Ngày ban hành</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" id="ma_chung_tu">
+                                                                <input type="text" class="form-control" id="ma_chung_tu" ng-model="newDoc.NgayBanHanh">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label col-sm-3" for="ma_chung_tu">Fie đính kèm</label>
                                                             <div class="col-sm-8">
-                                                                <input type="file" class="" id="ma_chung_tu">
+                                                                <input type="file" name="UploadFile" id="fileSelected" />
+                                                                       @*ng-file-select="onFileSelect($files)">*@
                                                             </div>
                                                         </div>
 
@@ -117,35 +118,41 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-sm-3" for="ma_chung_tu">Đơn vị ban hành</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" id="don_vi_ban_hanh">
+                                                                <input type="text" class="form-control" id="don_vi_ban_hanh" ng-model="newDoc.DonViBanHanh">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label col-sm-3" for="ma_chung_tu">Tên chứng từ</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" id="ma_chung_tu">
+                                                                <input type="text" class="form-control" id="ma_chung_tu" ng-model="newDoc.Ten">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label col-sm-3" for="ma_chung_tu">Người ký</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" id="ma_chung_tu">
+                                                                <input type="text" class="form-control" id="ma_chung_tu" ng-model="newDoc.NguoiKy">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </form>
                                             </div>
                                         </div>
+                                      
                                         <div class="row">
-                                            <div class="col-xs-12 btn_center">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">THÊM MỚI</button>
+                                            <div class="col-xs-12 btn_center" >
+                                                @*data-toggle="modal"*@
+                                                <button type="button" class="btn btn-primary"  data-target="#myModal" ng-click="addNewDoc()">Lưu</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
                                             </div>
+                                            
                                         </div>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <button type="button" class="btn btn-primary" ng-click="searchDoc()">TÌM KIẾM</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">THÊM MỚI</button>
                     </div>
                 </div>
             </div>
@@ -169,40 +176,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-center">
-                    <td>1</td>
-                    <td><a href="#">PXKVTG_PKH/16/01234</a></td>
-                    <td>Phiếu xuất kho thiết bị</td>
-                    <td>Phiếu xuất kho</td>
-                    <td>22/07/2016</td>
-                    <td>Trần Minh Huy</td>
-                    <td>VIETTEL</td>
-                    <td>Tập đoàn Viễn thông Quân đội</td>
-                    <td>Đã xác thực</td>
-                    <td></td>
-                </tr>
-                <tr class="text-center">
-                    <td>1</td>
-                    <td><a href="#">PXKVTG_PKH/16/01234</a></td>
-                    <td>Phiếu xuất kho thiết bị</td>
-                    <td>Phiếu xuất kho</td>
-                    <td>22/07/2016</td>
-                    <td>Trần Minh Huy</td>
-                    <td>VIETTEL</td>
-                    <td>Tập đoàn Viễn thông Quân đội</td>
-                    <td>Đã xác thực</td>
-                    <td></td>
-                </tr>
-                <tr class="text-center">
-                    <td>1</td>
-                    <td><a href="#">PXKVTG_PKH/16/01234</a></td>
-                    <td>Phiếu xuất kho thiết bị</td>
-                    <td>Phiếu xuất kho</td>
-                    <td>22/07/2016</td>
-                    <td>Trần Minh Huy</td>
-                    <td>VIETTEL</td>
-                    <td>Tập đoàn Viễn thông Quân đội</td>
-                    <td>Đã xác thực</td>
+                <tr class="text-center" ng-repeat="data in chungtuList">
+                    <td>{{$index+1}}</td>
+                    <td><a href="#">{{data.MaChungTu}}</a></td>
+                    <td>{{data.Ten}}</td>
+                    <td>{{data.MaLoaiChungTu}}</td>
+                    <td>{{data.NgayBanHanh}}</td>
+                    <td>{{data.NguoiKy}}</td>
+                    <td>{{data.MaDonVi}}</td>
+                    <td>{{data.DonViBanHanh}}</td>
+                    <td>{{data.TrangThai}}</td>
                     <td></td>
                 </tr>
             </tbody>

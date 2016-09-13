@@ -1,19 +1,25 @@
 ﻿
 @* Angular route template*@
-@*<div ng-view></div>*@
+<div ng-view></div>
 @* All scripts is generated here. *@
 @section scripts{   
     <script src="~/App/HomeModule.js"></script>
     <!-- Directive -->
+    <script src="~/App/directives/ngFileSelect.js"></script>
 
     <!-- Service -->
     <script src="~/App/services/CommonService.js"></script>
     <script src="~/App/services/EdataService.js"></script>
+    <script src="~/App/services/TraCuuKetQuaService.js"></script>
+    <script src="~/App/services/XuLyChungTuService.js"></script>
+
     <!-- Controller -->
     <script src="~/App/controllers/HomeController.js"></script>
     <script src="~/App/controllers/ChungTu.js"></script>
-     <script src="~/App/controllers/EdataListController.js"></script>   
-
+    <script src="~/App/controllers/TraCuuKetQuaController.js"></script>
+    <script src="~/App/controllers/XuLyChungTuController.js"></script>
     <!-- Other scripts -->
+    <script src="~/Scripts/upload_image.js"></script>
+
 
 }

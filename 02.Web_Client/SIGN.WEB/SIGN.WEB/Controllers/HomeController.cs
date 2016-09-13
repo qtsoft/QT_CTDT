@@ -26,6 +26,18 @@ namespace SIGN.WEB.Controllers
             return PartialView("~/Views/Home/ChungTu.cshtml");
         }
 
+        public ActionResult XuLyChungTu()
+        {
+            return PartialView("~/Views/Home/XuLyChungTu.cshtml");
+        }
+        public ActionResult TraCuuKetQua()
+        {
+            return PartialView("~/Views/Home/TraCuuKetQua.cshtml");
+        }
+
+
+     
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

@@ -9,7 +9,7 @@
     @*  @Scripts.Render("~/bundles/modernizr")*@
 
     <!-- Load angular scripts -->
-    @Scripts.Render("~/bundlesangularjs")
+    @Scripts.Render("~/bundles/angularjs")
 
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" />
@@ -427,11 +427,11 @@
                 </li>
 
                 <li class="">
-                    <a href="#" class="dropdown-toggle">
+                    @*<a href="#" class="dropdown-toggle">
                         <i class="fa"></i>
                         <span class="menu-text">Thêm mới bộ CT
                         </span>
-                    </a>
+                    </a>*@
 
                     @* <b class="arrow"></b>*@
 
@@ -450,42 +450,42 @@
                 </li>
 
                 <li class="">
-                    <a href="#" class="dropdown-toggle">
+                    <a ng-href="#/xu-ly-chung-tu" class="dropdown-toggle">
                         <i class="fa"></i>
                         <span class="menu-text">Xử lý chứng từ </span>
                     </a>
                 </li>
 
                 <li class="">
-                    <a href="#" class="dropdown-toggle">
+                    <a ng-href="#" class="dropdown-toggle">
                         <i class="fa"></i>
                         <span class="menu-text">Kết nối với Thuế </span>
                     </a>
                 </li>
 
                 <li class="">
-                    <a href="widgets.html">
+                    <a ng-href="#/">
                         <i class="fa"></i>
                         <span class="menu-text">Kết nối với Hải Quan </span>
                     </a>
                 </li>
 
-                <li class="">
-                    <a href="gallery.html">
+                @*<li class="">
+                    <a ng-href="#/tra-cuu-ket-qua">
                         <i class="fa"></i>
                         <span class="menu-text">Kiểm tra chứng từ </span>
                     </a>
-                </li>
+                </li>*@
 
                 <li class="">
-                    <a href="gallery.html">
+                    <a ng-href="#/">
                         <i class="fa"></i>
                         <span class="menu-text">Nhập kết quả kiểm tra </span>
                     </a>
                 </li>
 
                 <li class="">
-                    <a href="gallery.html">
+                    <a ng-href="#/tra-cuu-ket-qua">
                         <i class="fa"></i>
                         <span class="menu-text">Tra cứu kết quả </span>
                     </a>
@@ -923,8 +923,8 @@
         })
     </script>
 
-    @Scripts.Render("~/bundlesjquery")
-    @Scripts.Render("~/bundlesjqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
