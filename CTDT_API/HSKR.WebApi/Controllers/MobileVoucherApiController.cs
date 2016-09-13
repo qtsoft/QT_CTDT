@@ -68,7 +68,7 @@ namespace CTDT.WebApi.Controllers
                             MaChungTu = chungTu.MaChungTu,
                             NgayPheDuyet = chungTu.NgayBanHanh,
                             TrangThai = trangThaiChungTu,
-                            Files = domain + chungTu.FileDinhKem
+                            Files = domain + chungTu.FileDinhKem.Replace("~/", "")
                         }
                     };
                     return new ResponseResult(data, ActionContext);

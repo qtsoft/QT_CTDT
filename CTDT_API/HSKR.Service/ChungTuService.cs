@@ -23,11 +23,11 @@ namespace CTDT.Service
             _viewChungTus = _context.Set<ViewChungTu>();
         }
 
-        public List<ViewChungTuModel> GetByFilter(string key = "", string maChungTu="", int maLoaiChungTu=0, string donViBanHanh="", int trangThai=0, int start = 1, int limit = 10)
+        public List<ViewChungTu> GetByFilter(string key = "", string maChungTu="", int maLoaiChungTu=0, string donViBanHanh="", int trangThai=0, int start = 1, int limit = 10)
         {
 
          
-            Expression<Func<ViewChungTuModel, bool>> lambda;
+            Expression<Func<ViewChungTu, bool>> lambda;
             if (maLoaiChungTu > 0)
             {
                 lambda = c => c.MaLoaiChungTu == maLoaiChungTu;
@@ -40,24 +40,14 @@ namespace CTDT.Service
             {
                 lambda = c => (c.Ten.Contains(key)&& c.MaLoaiChungTu == maLoaiChungTu);
             }
+            if(trangThai == 0)
+            {
+                return _viewChungTus.OrderBy(c => c.MaChungTu).ToList();
+            }
             
             var lst = _viewChungTus.Where(c=>(c.TrangThai==trangThai) ).OrderBy(c => c.MaChungTu);
-            return lst.Select(c => new ViewChungTuModel
-            {
-
-                Id = c.Id, 
-                DonViBanHanh =  c.DonViBanHanh, 
-                MaChungTu =  c.MaChungTu, 
-                MaLoaiChungTu = c.MaLoaiChungTu, 
-                MaVach = c.MaVach, 
-                TenLoaiChungTu = c.TenLoaiChungTu, 
-                Ten =  c.Ten, 
-                TrangThai = c.TrangThai, 
-                NguoiKy = c.NguoiKy, 
-                MaDonVi = c.MaDonVi, 
-                NgayBanHanh = c.NgayBanHanh,
-                FileDinhKem = c.FileDinhKem
-            }).ToList();
+            return lst.ToList();
+            
         }
     }
 }
