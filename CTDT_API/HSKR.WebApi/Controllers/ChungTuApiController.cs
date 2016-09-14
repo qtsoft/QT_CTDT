@@ -414,6 +414,7 @@ namespace CTDT.WebApi.Controllers
 
                 barcode.DrawToPDF(currentDir+ ct.FileDinhKem, -1, 150, 130, currentDir + folderPath+fileName);
                 ct.TrangThai = model.TrangThai;
+                ct.MaVach =  model.Id.ToString();
                 ct.FileDinhKem = folderPath +"/"+ fileName;
                 _chungtuService.Update(ct);
                 model.FileDinhKem = domain + ct.FileDinhKem.Replace("~/", "");
