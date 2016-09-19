@@ -70,7 +70,8 @@ namespace SIGN.WEB.Controllers
         {
             //if (!ModelState.IsValid)
             //{
-                return View(model);
+            return RedirectToLocal(returnUrl);
+            //return View(model);
             //}
 
             // This doesn't count login failures towards account lockout

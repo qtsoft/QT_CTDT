@@ -5,13 +5,20 @@ var app = angular.module("ClientApp", ["ngRoute", "Service","Directive"]);
 
 // Show Routing.
 app.config(["$routeProvider", function ($routeProvider) {
-    $routeProvider.when("/",
+    $routeProvider.when("/login",
         {
             caseInsensitiveMatch: true,
-            templateUrl: "Home/ChungTu",
+            templateUrl: "Account/Login",
             title: "Chung tu",
             controller: "ChungTuController"
         });
+    $routeProvider.when("/",
+       {
+           caseInsensitiveMatch: true,
+           templateUrl: "Home/ChungTu",
+           title: "Chung tu",
+           controller: "ChungTuController"
+       });
     $routeProvider.when("/chung-tu",
         {
             caseInsensitiveMatch: true,

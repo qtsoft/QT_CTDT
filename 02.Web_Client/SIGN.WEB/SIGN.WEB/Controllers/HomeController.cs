@@ -14,7 +14,7 @@ namespace SIGN.WEB.Controllers
 
             if (User.Identity == null || !User.Identity.IsAuthenticated)
             {
-                return Redirect("/account/login");
+                //return Redirect("/account/login");
             }
 
             return View();

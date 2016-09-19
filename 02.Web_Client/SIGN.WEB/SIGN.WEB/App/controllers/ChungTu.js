@@ -14,6 +14,7 @@ app.controller('ChungTuController', function ($scope, $rootScope, $sce, $window,
         promisePost.then(
             function (result) {
                 $scope.chungtuList = result.data.Data;
+               
             }, function (error) {
                 console.log(error);
             });
@@ -35,7 +36,7 @@ app.controller('ChungTuController', function ($scope, $rootScope, $sce, $window,
         var promisePost = EdataService.addNewDoc($scope.newDoc, $scope.file);
         promisePost.then(
             function (result) {
-                
+                $scope.searchDoc();
             }, function (error) {
                 console.log(error);
             });

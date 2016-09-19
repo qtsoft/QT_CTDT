@@ -14,6 +14,7 @@ app.controller('XuLyChungTuController', function ($scope, $rootScope, $sce, $win
         promisePost.then(
             function (result) {
                 $scope.chungtuList = result.data.Data;
+                $scope.searchDoc();
             }, function (error) {
                 console.log(error);
             });
