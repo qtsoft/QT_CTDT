@@ -5,13 +5,13 @@ var app = angular.module("ClientApp", ["ngRoute", "Service","Directive"]);
 
 // Show Routing.
 app.config(["$routeProvider", function ($routeProvider) {
-    $routeProvider.when("/login",
-        {
-            caseInsensitiveMatch: true,
-            templateUrl: "Account/Login",
-            title: "Chung tu",
-            controller: "ChungTuController"
-        });
+    //$routeProvider.when("/login",
+    //    {
+    //        caseInsensitiveMatch: true,
+    //        templateUrl: "Account/Login",
+    //        title: "Chung tu",
+    //        controller: "ChungTuController"
+    //    });
     $routeProvider.when("/",
        {
            caseInsensitiveMatch: true,
@@ -58,7 +58,7 @@ app.run(['$rootScope', '$window','$location','$route',
         });
 
         // API URL
-        $rootScope.apiURL = "http://localhost:58474/";
+        $rootScope.apiURL = "http://118.69.171.176/Hospital/Api/MobileVoucherApi/";
 
         // Base Url of web app.
         $rootScope.BaseUrl = angular.element($('#BaseUrl')).val();

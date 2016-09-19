@@ -34,6 +34,7 @@ app.controller('XuLyChungTuController', function ($scope, $rootScope, $sce, $win
         var promisePost = XuLyChungTuService.proDoc($scope.detailDoc);
         promisePost.then(
             function (result) {
+                $("#pfdPriview").attr("src", result.data.Data);
                 $scope.searchDoc();
             }, function (error) {
                 console.log(error);
