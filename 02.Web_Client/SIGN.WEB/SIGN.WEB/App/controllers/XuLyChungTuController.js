@@ -28,4 +28,15 @@ app.controller('XuLyChungTuController', function ($scope, $rootScope, $sce, $win
         $('#myModal').modal('toggle');
         
     }
+
+    // Create new doc
+    $scope.proDoc = function () {
+        var promisePost = XuLyChungTuService.proDoc($scope.detailDoc);
+        promisePost.then(
+            function (result) {
+                $scope.searchDoc();
+            }, function (error) {
+                console.log(error);
+            });
+    }
 });

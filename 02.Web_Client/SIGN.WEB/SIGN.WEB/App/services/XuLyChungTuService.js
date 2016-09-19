@@ -33,5 +33,18 @@ service.service("XuLyChungTuService", function ($http, $rootScope, $window, $loc
         });
     }
 
+    this.processDoc = function (data) {
+        var fdata = new FormData();
+        var url = $rootScope.apiURL + '/api/ChungTuApi/Signature';
+
+        //fdata.append('file', file);
+        fdata.append('data', JSON.stringify(data));
+
+        return $http.post(url, fdata, {
+            transformRequest: angular.identity,
+            headers: { 'Content-Type': undefined }
+        });
+    }
+
 
 });
