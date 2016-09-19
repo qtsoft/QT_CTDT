@@ -12,6 +12,11 @@ namespace SIGN.WEB.Controllers
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
+            if (User.Identity == null || !User.Identity.IsAuthenticated)
+            {
+                return Redirect("/account/login");
+            }
+
             return View();
         }
 

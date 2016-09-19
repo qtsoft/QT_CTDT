@@ -10,7 +10,7 @@ app.controller('XuLyChungTuController', function ($scope, $rootScope, $sce, $win
     $scope.searchDoc = function () {
         // start and limit fixed: 1 - 1000
 
-        var promisePost = EdataService.searchDocs($scope.doc, 1, 1000);
+        var promisePost = XuLyChungTuService.searchDocs($scope.doc, 1, 1000);
         promisePost.then(
             function (result) {
                 $scope.chungtuList = result.data.Data;
@@ -23,6 +23,8 @@ app.controller('XuLyChungTuController', function ($scope, $rootScope, $sce, $win
     // Show modal detail data
     $scope.showDetailData = function(data) {
         $scope.detailDoc = data;
+        $("#pfdPriview").attr("src", data.FileDinhKem);
         $('#myModal').modal('toggle');
+        
     }
 });

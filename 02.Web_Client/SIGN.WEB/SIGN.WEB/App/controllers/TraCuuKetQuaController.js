@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-app.controller('TraCuuKetQuaController', function ($scope, $rootScope, $sce, $windo0w, XuLyChungTuService, fileReader) {
+app.controller('TraCuuKetQuaController', function ($scope, $rootScope, $sce, $windo0w, TraCuuKetQuaService, fileReader) {
     // Initial object
     $scope.doc = {};
     $scope.newDoc = {};
@@ -10,7 +10,7 @@ app.controller('TraCuuKetQuaController', function ($scope, $rootScope, $sce, $wi
     $scope.searchDoc = function () {
         // start and limit fixed: 1 - 1000
 
-        var promisePost = EdataService.searchDocs($scope.doc, 1, 1000);
+        var promisePost = TraCuuKetQuaService.searchDocs($scope.doc, 1, 1000);
         promisePost.then(
             function (result) {
                 $scope.chungtuList = result.data.Data;
