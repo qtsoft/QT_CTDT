@@ -375,7 +375,7 @@ namespace CTDT.WebApi.Controllers
                 var pathQuery = myuri.PathAndQuery;
                 var appUrl = HttpRuntime.AppDomainAppVirtualPath;
                 domain = myuri.ToString().Replace(pathQuery, "") + appUrl.Trim();
-                string currentDir = Directory.GetCurrentDirectory();
+                string currentDir = HttpContext.Current.Server.MapPath("~");
                 if (!ModelState.IsValid)
                 {
                     var result = new Response<LoaiChungTuModel>
@@ -411,11 +411,12 @@ namespace CTDT.WebApi.Controllers
                 // Place barcode at bottom-right corner of every document page
                 folderPath = @"/Uploads/" + model.Id.ToString().Trim();
                 fileName = "CTResult_" + model.Id + ".pdf";
-
-                barcode.DrawToPDF(currentDir+ ct.FileDinhKem, -1, 150, 130, currentDir + folderPath+fileName);
+                var inputFile = currentDir + ct.FileDinhKem.Replace("~/","");
+                var outPutFile = currentDir+ folderPath + "/" + fileName;
+                barcode.DrawToPDF(inputFile, -1, 150, 130, outPutFile);
                 ct.TrangThai = model.TrangThai;
                 ct.MaVach =  model.Id.ToString();
-                ct.FileDinhKem = folderPath +"/"+ fileName;
+                ct.FileDinhKem ="~"+ folderPath +"/"+ fileName;
                 _chungtuService.Update(ct);
                 model.FileDinhKem = domain + ct.FileDinhKem.Replace("~/", "");
                 var data = new Response<ChungTuModel>
