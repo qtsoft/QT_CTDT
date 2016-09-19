@@ -30,11 +30,35 @@ namespace CTDT.WebApi.Controllers
         {
             try
             {
+                string domain;
+                var folderPath = "";
+                var fileName = "";
+                var myuri = new Uri(HttpContext.Current.Request.Url.AbsoluteUri);
+                var pathQuery = myuri.PathAndQuery;
+                var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+                domain = myuri.ToString().Replace(pathQuery, "") + appUrl.Trim();
+
                 var lst = _chungtuService.GetByFilter(key,maChungTu, maLoaiChungTu,donViBanHanh,trangThai, start, limit);
+
+                var chungTus = lst.Select(c => new ViewChungTuModel
+                {
+                    Id = c.Id,
+                    DonViBanHanh = c.DonViBanHanh,
+                    MaChungTu = c.MaChungTu,
+                    MaLoaiChungTu = c.MaLoaiChungTu,
+                    MaVach = c.MaVach,
+                    TenLoaiChungTu = c.TenLoaiChungTu,
+                    Ten = c.Ten,
+                    TrangThai = c.TrangThai,
+                    NguoiKy = c.NguoiKy,
+                    MaDonVi = c.MaDonVi,
+                    NgayBanHanh = c.NgayBanHanh,
+                    FileDinhKem = c.FileDinhKem !=null ? domain + c.FileDinhKem.Replace("~/", ""):""
+                }).ToList();
                 var data = new Response<List<ViewChungTuModel>>
                 {
                     Status = true,
-                    Data = lst,
+                    Data = chungTus,
                     Message = "Success!"
 
                 };
@@ -68,7 +92,7 @@ namespace CTDT.WebApi.Controllers
                 logger.Trace("domain: ", domain.ToLower());
                
                 var httpRequest = HttpContext.Current.Request;
-                var strJson = httpRequest.Form["path"].Trim();
+                var strJson = httpRequest.Form["data"].Trim();
                 var model = JsonConvert.DeserializeObject<ChungTuModel>(strJson);
 
                 if (!ModelState.IsValid)
@@ -111,8 +135,8 @@ namespace CTDT.WebApi.Controllers
                         ActionContext.Response.StatusCode = HttpStatusCode.LengthRequired;
                         return new ResponseResult(dataCheckSize, ActionContext);
                     }
-                    folderPath = @"~/Uploads/" + model.MaChungTu.Trim();
-                    fileName = "CT_" +model.MaChungTu+ extension;
+                    folderPath = @"~/Uploads/" + model.MaChungTu.Replace("/","").ToString().Trim();
+                    fileName = "CT_" + model.MaChungTu.Replace("/", "").ToString()+ extension;
                     var folderExists = Directory.Exists(HttpContext.Current.Request.MapPath(folderPath));
                     if (!folderExists)
                         Directory.CreateDirectory(HttpContext.Current.Request.MapPath(folderPath));
@@ -139,7 +163,7 @@ namespace CTDT.WebApi.Controllers
 
                 };
                 _chungtuService.Create(chungtu);
-                model.FileDinhKem = folderPath.Replace("~", "") + "/" + fileName;
+                model.FileDinhKem = domain + folderPath.Replace("~/", "") + "/" + fileName;
                 var data = new Response<ChungTuModel>
                 {
                     Message = "Create Success",
@@ -172,11 +196,12 @@ namespace CTDT.WebApi.Controllers
                 var fileName = "";
                 var myuri = new Uri(HttpContext.Current.Request.Url.AbsoluteUri);
                 var pathQuery = myuri.PathAndQuery;
-                domain = myuri.ToString().Replace(pathQuery, "");
+                var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+                domain = myuri.ToString().Replace(pathQuery, "") + appUrl.Trim();
                 logger.Trace("domain: ", domain.ToLower());
                 
                 var httpRequest = HttpContext.Current.Request;
-                var strJson = httpRequest.Form["path"].Trim();
+                var strJson = httpRequest.Form["data"].Trim();
                 var model = JsonConvert.DeserializeObject<ChungTuModel>(strJson);
                 if (!ModelState.IsValid)
                 {
@@ -231,8 +256,8 @@ namespace CTDT.WebApi.Controllers
                         ActionContext.Response.StatusCode = HttpStatusCode.LengthRequired;
                         return new ResponseResult(dataCheckSize, ActionContext);
                     }
-                    folderPath = @"~/Uploads/" + model.MaChungTu.Trim();
-                    fileName = "CT_" + model.MaChungTu + extension;
+                    folderPath = @"~/Uploads/" + model.MaChungTu.Replace("/", "").ToString().Trim();
+                    fileName = "CT_" + model.MaChungTu.Replace("/", "").ToString() + extension;
                     var folderExists = Directory.Exists(HttpContext.Current.Request.MapPath(folderPath));
                     if (!folderExists)
                         Directory.CreateDirectory(HttpContext.Current.Request.MapPath(folderPath));
@@ -258,10 +283,11 @@ namespace CTDT.WebApi.Controllers
                 if (!string.IsNullOrEmpty(fileName))
                 {
 
-                    ct.FileDinhKem = folderPath.Replace("~", "") + "/" + fileName;
+                    ct.FileDinhKem = folderPath.Replace("~/", "") + "/" + fileName;
                     logger.Trace("Trace UrlSource: " + ct.FileDinhKem);
                 }
                 _chungtuService.Update(ct);
+                model.FileDinhKem = domain + ct.FileDinhKem;
                 var data = new Response<ChungTuModel>
                 {
                     Message = "Edit Success",
@@ -345,7 +371,11 @@ namespace CTDT.WebApi.Controllers
                 string domain;
                 var folderPath = "";
                 var fileName = "";
-                string currentDir = Directory.GetCurrentDirectory();
+                var myuri = new Uri(HttpContext.Current.Request.Url.AbsoluteUri);
+                var pathQuery = myuri.PathAndQuery;
+                var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+                domain = myuri.ToString().Replace(pathQuery, "") + appUrl.Trim();
+                string currentDir = HttpContext.Current.Server.MapPath("~");
                 if (!ModelState.IsValid)
                 {
                     var result = new Response<LoaiChungTuModel>
@@ -379,15 +409,19 @@ namespace CTDT.WebApi.Controllers
                 // Set value
                 barcode.Value = model.Id.ToString();
                 // Place barcode at bottom-right corner of every document page
-                folderPath = @"/Uploads/" + model.MaChungTu.Trim();
-                fileName = "CT_" + model.Id + ".pdf";
-
-                barcode.DrawToPDF(currentDir+ ct.FileDinhKem, -1, 150, 130, currentDir + folderPath+fileName);
+                folderPath = @"/Uploads/" + model.Id.ToString().Trim();
+                fileName = "CTResult_" + model.Id + ".pdf";
+                var inputFile = currentDir + ct.FileDinhKem.Replace("~/","");
+                var outPutFile = currentDir+ folderPath + "/" + fileName;
+                barcode.DrawToPDF(inputFile, -1, 150, 130, outPutFile);
                 ct.TrangThai = model.TrangThai;
+                ct.MaVach =  model.Id.ToString();
+                ct.FileDinhKem ="~"+ folderPath +"/"+ fileName;
                 _chungtuService.Update(ct);
+                model.FileDinhKem = domain + ct.FileDinhKem.Replace("~/", "");
                 var data = new Response<ChungTuModel>
                 {
-                    Message = "Edit Success",
+                    Message = "Sign Success",
                     Status = true,
                     Data = model
                 };

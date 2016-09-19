@@ -38,7 +38,6 @@ namespace CTDT.WebApi.Controllers
                 domain = myuri.ToString().Replace(pathQuery, "") + appUrl.Trim();
                 logger.Trace("domain: ", domain.ToLower());
 
-
                 if (IsBarcode.Equals("1"))
                 {
                     var chungTu = _chungtuService.Find(c => (c.MaVach.ToUpper().Trim() == Code.ToUpper().Trim() && c.TrangThai == 4)).FirstOrDefault();
@@ -68,7 +67,7 @@ namespace CTDT.WebApi.Controllers
                             MaChungTu = chungTu.MaChungTu,
                             NgayPheDuyet = chungTu.NgayBanHanh,
                             TrangThai = trangThaiChungTu,
-                            Files = domain + chungTu.FileDinhKem
+                            Files = chungTu.FileDinhKem != null ? domain + chungTu.FileDinhKem.Replace("~/", "") : ""
                         }
                     };
                     return new ResponseResult(data, ActionContext);
